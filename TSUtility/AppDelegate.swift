@@ -16,6 +16,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        print(0x333333.ts.color())
+        print(0x333333.ts.color(0.75))
+        print(13.ts.font())
+        print(13.ts.boldFont())
+        print(111.ts.string())
+        print("0x111111".ts.color())
+        print("0x111111".ts.color(0.7))
+        print("12345678".ts.substring(2, 4))
+        print(10.ts.scale())
+        print(CGFloat(10.5).ts.scale())
+        print(Float(10.5).ts.scale())
+        print(Double(10.5).ts.scale())
+        print(UITabBar().ts.tabBarHeight)
+        print(UINavigationBar().ts.navBarHeight)
+        print(UIDevice().ts.isIPhoneX)
+        print(UIDevice().ts.appVersion)
+        print(UIDevice().ts.appName)
+        print(UIDevice().ts.systemVersion)
+        print(UIDevice().ts.deviceName)
+        print(UIDevice().ts.systemVersionGreaterThanOrEqualTo(11.0))
+        
         return true
     }
 
