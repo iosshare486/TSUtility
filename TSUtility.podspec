@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
  
   s.source       = { :git => "http://gitlab.caiqr.com/ios_module/TSUtility.git", :tag => s.version }
 
-  s.source_files  = "source/*", "DevelopDocument.swift"
+  s.source_files  = "TSUtility/source", "TSUtility/DevelopDocument.swift"
 
   #s.exclude_files = "Classes/Exclude"
 
