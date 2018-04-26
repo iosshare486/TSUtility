@@ -19,17 +19,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-        self.window?.rootViewController = ViewController()
+        let vc = ViewController()
+        vc.view.backgroundColor = .white
+        self.window?.rootViewController = vc
         
         self.window?.makeKeyAndVisible()
-        
+        self.window?.backgroundColor = .white
         let label = UILabel(frame: CGRect(x: 20.ts.scale(), y: 40.ts.scale(), width: 200.ts.scale(), height: 400.ts.scale()))
-        label.font = 15.ts.font()
-        label.textColor = 0xff5050.ts.color()
+        label.font = 19.ts.font()
+        label.textColor = "0x333333".ts.color()
         label.text = UIDevice().ts.appVersion
+        label.backgroundColor = "0xff5228".ts.color()
+        
+        let label1 = UILabel(frame: CGRect(x: 20, y: 40, width: 200, height: 400))
+        label1.font = UIFont.systemFont(ofSize: 19)
+        label1.textColor = "0x333333".ts.color()
+        label1.text = UIDevice().ts.appVersion + "\n" + "\(UIDevice().ts.isIPhoneX)" + "\n" + UIDevice().ts.appName + "\n" + "\(UIDevice().ts.systemVersion)" + "\n" + UIDevice().ts.deviceName  + "\n" + "\(UIDevice().ts.systemVersionGreaterThanOrEqualTo(11.0))"  + "\n" + "\(UITabBar().ts.tabBarHeight)" + "\n" + "\(UINavigationBar().ts.navBarHeight)"
+        
+        label1.backgroundColor = "0x5cc3ff".ts.color(0.2)
+        label1.numberOfLines = 0
         
         self.window?.addSubview(label)
+        self.window?.addSubview(label1)
         
         
         

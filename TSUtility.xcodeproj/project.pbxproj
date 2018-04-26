@@ -109,18 +109,14 @@
 		F5262F6E2084B04900442F4F /* TSUtility */ = {
 			isa = PBXGroup;
 			children = (
+				F504DF58208872D5006B250A /* DevelopDocument.swift */,
+				F569E0E0209187580050BC7B /* source */,
 				F5262F6F2084B04900442F4F /* AppDelegate.swift */,
 				F5262F712084B04900442F4F /* ViewController.swift */,
 				F5262F732084B04900442F4F /* Main.storyboard */,
 				F5262F762084B04900442F4F /* Assets.xcassets */,
 				F5262F782084B04900442F4F /* LaunchScreen.storyboard */,
 				F5262F7B2084B04900442F4F /* Info.plist */,
-				F504DF58208872D5006B250A /* DevelopDocument.swift */,
-				F504DF5420886FB7006B250A /* TSUtilityInt.swift */,
-				F504DF5620886FC6006B250A /* TSUtilityString.swift */,
-				F504DF5A20887916006B250A /* TSUtilityScale.swift */,
-				F5FE7CFB2089C40500B54767 /* TSUtilityDevice.swift */,
-				F5E87D742085D6F800B93140 /* TSUtility.swift */,
 			);
 			path = TSUtility;
 			sourceTree = "<group>";
@@ -141,6 +137,18 @@
 				F5262F912084B04A00442F4F /* Info.plist */,
 			);
 			path = TSUtilityUITests;
+			sourceTree = "<group>";
+		};
+		F569E0E0209187580050BC7B /* source */ = {
+			isa = PBXGroup;
+			children = (
+				F504DF5420886FB7006B250A /* TSUtilityInt.swift */,
+				F504DF5620886FC6006B250A /* TSUtilityString.swift */,
+				F504DF5A20887916006B250A /* TSUtilityScale.swift */,
+				F5FE7CFB2089C40500B54767 /* TSUtilityDevice.swift */,
+				F5E87D742085D6F800B93140 /* TSUtility.swift */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C74VQ3FE9N;
 				INFOPLIST_FILE = TSUtility/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caiqr.TSUtility;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C74VQ3FE9N;
 				INFOPLIST_FILE = TSUtility/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = caiqr.TSUtility;
 				PRODUCT_NAME = "$(TARGET_NAME)";

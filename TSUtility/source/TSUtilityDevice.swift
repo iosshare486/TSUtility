@@ -69,10 +69,10 @@ extension TSUtilityDevice where Base: UIDevice {
             let firstVersion = versions[0]
             let secondVersion = versions[1]
             let version = firstVersion + "." + secondVersion as NSString
-            return CGFloat(version.floatValue)
+            return CGFloat(version.doubleValue)
         }else {
             let version = iosVersion as NSString
-            return CGFloat(version.floatValue)
+            return CGFloat(version.doubleValue)
         }
     }
     

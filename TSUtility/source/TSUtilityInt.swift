@@ -53,7 +53,7 @@ extension TSUtilityInt {
         
         return UIColor(red: ((CGFloat)((rgbInt & 0xFF0000) >> 16)) / 255.0,
                        green: ((CGFloat)((rgbInt & 0xFF00) >> 8)) / 255.0,
-                       blue: ((CGFloat)(rgbInt & 0xFF)) / 255.0,alpha: 1.0)
+                       blue: ((CGFloat)(rgbInt & 0xFF)) / 255.0,alpha: alpha)
     }
 }
 

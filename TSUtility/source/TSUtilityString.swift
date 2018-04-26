@@ -62,11 +62,11 @@ extension TSUtilityString {
         }
         if cString.hasPrefix("0x") {
             let reqIndex = cString.index(cString.startIndex, offsetBy: 2)
-            cString = String(cString[..<reqIndex])
+            cString = String(cString[reqIndex..<cString.endIndex])
         }
         if cString.hasPrefix("#") {
             let reqIndex = cString.index(cString.startIndex, offsetBy: 1)
-            cString = String(cString[..<reqIndex])
+            cString = String(cString[reqIndex..<cString.endIndex])
         }
         if cString.count != 6 {
             return UIColor.black
