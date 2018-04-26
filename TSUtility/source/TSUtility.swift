@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 /// 声明协议 增加属性
 public protocol TSUtilityCompatible {
     

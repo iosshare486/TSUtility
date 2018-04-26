@@ -9,21 +9,21 @@
 Pod::Spec.new do |s|
 
   s.name         = "TSUtility"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "A short description of TSUtility."
 
   s.description  = <<-DESC
                    DESC
-
+  s.platform     = :ios, "8.0"
   s.homepage     = "http://EXAMPLE/TSUtility"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "yuchenH" => "huangyuchen@caiqr.com" }
  
-  s.source       = { :git => "http://EXAMPLE/TSUtility.git", :tag => 1.0.0 }
+  s.source       = { :git => "http://EXAMPLE/TSUtility.git", :tag => "#{s.version}" }
 
   s.source_files  = "source/*", "DevelopDocument.swift"
   s.exclude_files = "Classes/Exclude"
-
+  s.framework  = "UIKit"
 end
