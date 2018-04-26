@@ -18,6 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        self.window?.rootViewController = ViewController()
+        
+        self.window?.makeKeyAndVisible()
+        
+        let label = UILabel(frame: CGRect(x: 20.ts.scale(), y: 40.ts.scale(), width: 200.ts.scale(), height: 400.ts.scale()))
+        label.font = 15.ts.font()
+        label.textColor = 0xff5050.ts.color()
+        label.text = UIDevice().ts.appVersion
+        
+        self.window?.addSubview(label)
+        
+        
+        
         print(0x333333.ts.color())
         print(0x333333.ts.color(0.75))
         print(13.ts.font())
