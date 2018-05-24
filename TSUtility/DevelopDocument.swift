@@ -25,6 +25,8 @@ String:
     2、String.ts.color(alpha)
  String -> 获取指定下标的子字符串:
     substring(startIndex, endIndex)
+ version compare
+    "9.0".versionCompare("11.0") -> ComparisonResult.orderedAscending
  
 Scale: <Int; CGFloat; Double; Float>
  example:
@@ -44,12 +46,10 @@ Scale: <Int; CGFloat; Double; Float>
     UIDevice().ts.appVersion
  应用名称
     UIDevice().ts.appName
- 系统版本
-    UIDevice().ts.systemVersion
  设备名称
     UIDevice().ts.deviceName
  系统版本是否大于等于指定版本
-    UIDevice().ts.systemVersionGreaterThanOrEqualTo(11.0)->Bool
+    UIDevice().ts.systemVersionGreaterThanOrEqualTo("11.0")->Bool
  
  */
  

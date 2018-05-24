@@ -25,16 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         self.window?.backgroundColor = .white
-        let label = UILabel(frame: CGRect(x: 20.ts.scale(), y: 40.ts.scale(), width: 200.ts.scale(), height: 400.ts.scale()))
+        let label = UILabel(frame: CGRect(x: 20.ts.scale(), y: 40.ts.scale(), width: 200.ts.scale(), height: 100.ts.scale()))
         label.font = 19.ts.font()
-        label.textColor = "0x333333".ts.color()
+        label.textColor = 0xfc.ts.color()
         label.text = UIDevice().ts.appVersion
-        label.backgroundColor = "0xff5228".ts.color()
+        label.backgroundColor = "#3".ts.color()
         
-        let label1 = UILabel(frame: CGRect(x: 20, y: 40, width: 200, height: 400))
+        
+        let label1 = UILabel(frame: CGRect(x: 20, y: 140, width: 200, height: 400))
         label1.font = UIFont.systemFont(ofSize: 19)
         label1.textColor = "0x333333".ts.color()
-        label1.text = UIDevice().ts.appVersion + "\n" + "\(UIDevice().ts.isIPhoneX)" + "\n" + UIDevice().ts.appName + "\n" + "\(UIDevice().ts.systemVersion)" + "\n" + UIDevice().ts.deviceName  + "\n" + "\(UIDevice().ts.systemVersionGreaterThanOrEqualTo(11.0))"  + "\n" + "\(UITabBar().ts.tabBarHeight)" + "\n" + "\(UINavigationBar().ts.navBarHeight)"
+        label1.text = UIDevice().ts.appVersion + "\n" + "\(UIDevice().ts.isIPhoneX)" + "\n" + UIDevice().ts.appName + "\n" + UIDevice().ts.deviceName + "\n" + UIDevice.current.systemVersion + "\n" + "\(UIDevice().ts.systemVersionGreaterThanOrEqualTo("11.1.0.2"))"  + "\n" + "\(UITabBar().ts.tabBarHeight)" + "\n" + "\(UINavigationBar().ts.navBarHeight)"
         
         label1.backgroundColor = "0x5cc3ff".ts.color(0.2)
         label1.numberOfLines = 0
@@ -61,9 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(UIDevice().ts.isIPhoneX)
         print(UIDevice().ts.appVersion)
         print(UIDevice().ts.appName)
-        print(UIDevice().ts.systemVersion)
         print(UIDevice().ts.deviceName)
-        print(UIDevice().ts.systemVersionGreaterThanOrEqualTo(11.0))
+//        print(UIDevice().ts.systemVersionGreaterThanOrEqualTo("11.0"))
         
         return true
     }

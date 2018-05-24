@@ -59,35 +59,16 @@ extension TSUtilityDevice where Base: UIDevice {
         return ""
     }
     
-    /// 获取系统版本 只取1位小数点 方便 值判断
-    public var systemVersion: CGFloat {
-        
-        let iosVersion = UIDevice.current.systemVersion
-        let versions = iosVersion.components(separatedBy: ".")
-        if versions.count > 2 {
-
-            let firstVersion = versions[0]
-            let secondVersion = versions[1]
-            let version = firstVersion + "." + secondVersion as NSString
-            return CGFloat(version.doubleValue)
-        }else {
-            let version = iosVersion as NSString
-            return CGFloat(version.doubleValue)
-        }
-    }
-    
-    /// 传入系统版本判断是否大于等于
+    /// 判断系统版本与指定版本的大小
     ///
     /// - Parameter compareVersion: 指定版本
     /// - Returns: true表示系统版本大于等于指定版本
-    public func systemVersionGreaterThanOrEqualTo (_ compareVersion: CGFloat) -> Bool {
+    public func systemVersionGreaterThanOrEqualTo (_ compareVersion: String) -> Bool {
         
-        if self.systemVersion >= compareVersion {
-            
-            return true
+        if UIDevice.current.systemVersion.ts.versionCompare(compareVersion) == ComparisonResult.orderedAscending {
+            return false
         }
-        
-        return false
+        return true
     }
     
     /// 设备型号

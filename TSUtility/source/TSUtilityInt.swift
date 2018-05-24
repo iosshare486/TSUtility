@@ -31,7 +31,7 @@ public final class TSUtilityInt {
     }
     
     public func string() -> String {
-        return String(format: "%i", self.base)
+        return String(format: "%ld", self.base)
     }
     
     public func font() -> UIFont {
@@ -51,9 +51,16 @@ extension TSUtilityInt {
         
         let rgbInt: Int = self.base
         
-        return UIColor(red: ((CGFloat)((rgbInt & 0xFF0000) >> 16)) / 255.0,
-                       green: ((CGFloat)((rgbInt & 0xFF00) >> 8)) / 255.0,
-                       blue: ((CGFloat)(rgbInt & 0xFF)) / 255.0,alpha: alpha)
+        let rgbString = String(format: "%x", rgbInt)
+        if rgbString.count == 6 {
+            //如果 是6位16进制数 则直接返回color
+            return UIColor(red: ((CGFloat)((rgbInt & 0xFF0000) >> 16)) / 255.0,
+                           green: ((CGFloat)((rgbInt & 0xFF00) >> 8)) / 255.0,
+                           blue: ((CGFloat)(rgbInt & 0xFF)) / 255.0,alpha: alpha)
+        }else {
+            
+            return rgbString.ts.color(alpha)
+        }
     }
 }
 
