@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TSUtility"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "this is utility for scale font and color"
 
   s.description  = <<-DESC
