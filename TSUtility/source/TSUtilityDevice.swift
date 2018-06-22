@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TSUtilityCompatibleDevice: TSUtilityCompatible { }
+public protocol TSUtilityCompatibleDevice: TSUtilityCompatible { }
 
 extension TSUtilityCompatibleDevice {
     public var ts: TSUtilityDevice<Self> {
@@ -57,6 +57,7 @@ extension TSUtilityDevice where Base: UIDevice {
             }
         }
         return ""
+        
     }
     
     /// 判断系统版本与指定版本的大小
