@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         label.text = UIDevice().ts.appVersion
         label.backgroundColor = "#3".ts.color()
         
-        
         let label1 = UILabel(frame: CGRect(x: 20, y: 140, width: 200, height: 400))
         label1.font = UIFont.systemFont(ofSize: 19)
         label1.textColor = "0x333333".ts.color()
@@ -39,12 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         label1.backgroundColor = "0x5cc3ff".ts.color(0.2)
         label1.numberOfLines = 0
+        let sizeL = label1.text!.ts.boundingSize(font: UIFont.systemFont(ofSize: 19), limitSize: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT)), lineSpace: 10)
+        label1.bounds = CGRect(x: 20, y: 140, width: sizeL.width, height: sizeL.height)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 10
+        paragraphStyle.lineBreakMode = .byWordWrapping;
+        let attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 19), NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
+        label1.attributedText = NSAttributedString.init(string: label1.text!, attributes: attributes)
         
         self.window?.addSubview(label)
         self.window?.addSubview(label1)
-        
-        
-        
+
         print(0x333333.ts.color())
         print(0x333333.ts.color(0.75))
         print(13.ts.font())
@@ -64,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(UIDevice().ts.appName)
         print(UIDevice().ts.deviceName)
 //        print(UIDevice().ts.systemVersionGreaterThanOrEqualTo("11.0"))
-        
+        print("1s".ts.boundingSize(font: 13.ts.font(), limitSize: CGSize(width: 0, height: CGFloat(MAXFLOAT)), lineSpace: 0))
         return true
     }
 

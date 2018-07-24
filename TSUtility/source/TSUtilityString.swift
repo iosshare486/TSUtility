@@ -75,6 +75,23 @@ public final class TSUtilityString {
             return ComparisonResult.orderedSame
         }
     }
+    //计算文本宽和高
+    public func boundingSize(font:UIFont,limitSize:CGSize,lineSpace : CGFloat)->CGSize{
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        
+        paragraphStyle.lineSpacing = lineSpace
+        
+        paragraphStyle.lineBreakMode = .byWordWrapping;
+        
+        let attributes = [NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
+        
+        let rect = self.base.boundingRect(with: limitSize, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
+        
+        return rect.size
+        
+    }
+    
 }
 
 extension TSUtilityString {
