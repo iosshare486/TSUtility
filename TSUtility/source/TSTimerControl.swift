@@ -35,7 +35,9 @@ open class TSTimerControl: NSObject {
     //启动时间工具
     func addMession(timeinterval : TimeInterval, target : NSObject?) {
         if target != nil {
-            let dic = ["target":target!,
+            weak var weaktarget = target
+            
+            let dic = ["target":weaktarget!,
                        "time":(timeinterval)] as [String : AnyObject]
             ts_service_stack.append(dic as [String : AnyObject])
         }
