@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		51A812D22125701200463871 /* TSUserInteraction+UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A812D12125701200463871 /* TSUserInteraction+UIResponder.swift */; };
 		51A812D42125768300463871 /* TSRecurClick+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A812D32125768300463871 /* TSRecurClick+UIButton.swift */; };
+		51A812DA2126DCE700463871 /* TSTimerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A812D92126DCE700463871 /* TSTimerControl.swift */; };
 		F504DF5520886FB7006B250A /* TSUtilityInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504DF5420886FB7006B250A /* TSUtilityInt.swift */; };
 		F504DF5720886FC6006B250A /* TSUtilityString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504DF5620886FC6006B250A /* TSUtilityString.swift */; };
 		F504DF59208872D5006B250A /* DevelopDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504DF58208872D5006B250A /* DevelopDocument.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		51A812D12125701200463871 /* TSUserInteraction+UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TSUserInteraction+UIResponder.swift"; sourceTree = "<group>"; };
 		51A812D32125768300463871 /* TSRecurClick+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TSRecurClick+UIButton.swift"; sourceTree = "<group>"; };
+		51A812D92126DCE700463871 /* TSTimerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSTimerControl.swift; sourceTree = "<group>"; };
 		F504DF5420886FB7006B250A /* TSUtilityInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUtilityInt.swift; sourceTree = "<group>"; };
 		F504DF5620886FC6006B250A /* TSUtilityString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUtilityString.swift; sourceTree = "<group>"; };
 		F504DF58208872D5006B250A /* DevelopDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopDocument.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		F569E0E0209187580050BC7B /* source */ = {
 			isa = PBXGroup;
 			children = (
+				51A812D92126DCE700463871 /* TSTimerControl.swift */,
 				F504DF5420886FB7006B250A /* TSUtilityInt.swift */,
 				F504DF5620886FC6006B250A /* TSUtilityString.swift */,
 				F504DF5A20887916006B250A /* TSUtilityScale.swift */,
@@ -296,6 +299,7 @@
 				F5262F702084B04900442F4F /* AppDelegate.swift in Sources */,
 				F5E87D752085D6F800B93140 /* TSUtility.swift in Sources */,
 				F5FE7CFC2089C40500B54767 /* TSUtilityDevice.swift in Sources */,
+				51A812DA2126DCE700463871 /* TSTimerControl.swift in Sources */,
 				F504DF5B20887916006B250A /* TSUtilityScale.swift in Sources */,
 				F504DF5520886FB7006B250A /* TSUtilityInt.swift in Sources */,
 				F504DF5720886FC6006B250A /* TSUtilityString.swift in Sources */,
