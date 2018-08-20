@@ -15,10 +15,10 @@ import UIKit
 
 public var ts_timerControl = TSTimerControl.createConfig()
 open class TSTimerControl: NSObject {
-
-    var ts_timer_interval : TimeInterval = 0.1
+    
+    var ts_timer_interval : TimeInterval = 1
     var ts_service_stack = [[String : AnyObject]]()
-    var time_counting = 0.0
+    var time_counting = 0
     
     var timer : Timer?
     
@@ -35,12 +35,14 @@ open class TSTimerControl: NSObject {
     //启动时间工具
     func addMession(timeinterval : TimeInterval, target : NSObject?) {
         if target != nil {
-            let dic = ["target":target!,
+            weak var weaktarget = target
+            
+            let dic = ["target":weaktarget!,
                        "time":(timeinterval)] as [String : AnyObject]
             ts_service_stack.append(dic as [String : AnyObject])
         }
         if self.timer == nil {
-            time_counting = 0.0
+            time_counting = 0
             if #available(iOS 10.0, *) {
                 self.timer = Timer.scheduledTimer(withTimeInterval: ts_timer_interval, repeats: true, block: { (tim) in
                     self.countDown()
@@ -55,11 +57,12 @@ open class TSTimerControl: NSObject {
         //检查元素合法性
         checkInstanceWetherNil()
         //派发事件
-        time_counting += 0.1
+        time_counting += 1
         if ts_service_stack.count > 0 {
             for (_, value) in ts_service_stack.enumerated() {
-                let time = (value["timer"])?.doubleValue
-                if time_counting >= Double(time!) {
+                let time = Int(truncating: ((value["time"]))! as! NSNumber)
+                let yus = time_counting % time
+                if time_counting >= time && yus == 0{
                     if value["target"] != nil {
                         let target :NSObject = value["target"] as! NSObject
                         if target.conforms(to: TS_TimerCountDown.self){
@@ -75,8 +78,13 @@ open class TSTimerControl: NSObject {
     func checkInstanceWetherNil() {
         if ts_service_stack.count > 0 {
             for (index, value) in ts_service_stack.enumerated() {
-                if value["target"] != nil {
+                if value["target"] == nil {
                     ts_service_stack.remove(at: index)
+                    if index == ts_service_stack.count - 1{
+                        break
+                    }else{
+                        checkInstanceWetherNil()
+                    }
                 }
             }
         }
@@ -93,7 +101,7 @@ open class TSTimerControl: NSObject {
     func cleanMemory() {
         self.timer?.invalidate()
         self.timer = nil
-        self.time_counting = 0.0
+        self.time_counting = 0
         free(&ts_timerControl)
     }
 }
