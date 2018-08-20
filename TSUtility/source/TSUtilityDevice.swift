@@ -115,6 +115,17 @@ extension TSUtilityDevice where Base: UIDevice {
         default:                                        return identifier
         }
     }
+    
+    
+    public func deviceId() -> String {
+        var deviceNoString: String
+        let puuid = CFUUIDCreate(nil);
+        let uuidString = CFUUIDCreateString(nil, puuid);
+        deviceNoString = CFStringCreateCopy(nil, uuidString!) as String;
+        return deviceNoString
+    }
+    
+    
 }
 
 extension UINavigationBar: TSUtilityCompatibleDevice { }
