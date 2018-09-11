@@ -96,6 +96,59 @@ public final class TSUtilityString {
 
 extension TSUtilityString {
     
+    /// 是否为纯数字
+    ///
+    /// - Returns: 是否合法
+    public func isOnlyNumber() -> Bool {
+        return predicateLimit("^[0-9]+$")
+    }
+    
+    /// 是字母或是数字
+    ///
+    /// - Returns: 是否合法
+    public func isWordOrNumber() -> Bool {
+        return predicateLimit("^[A-Za-z0-9]+$")
+    }
+    
+    /// 是汉子
+    ///
+    /// - Returns: 是否合法
+    public func isChinese() -> Bool {
+        return predicateLimit("^[\u{4e00}-\u{9fa5}]+$")
+    }
+    
+    /// 是否为手机号
+    ///
+    /// - Returns: 是否合法
+    public func isPhoneNumber() -> Bool {
+        return predicateLimit("^1[0-9]{10}+$")
+    }
+    
+    /// 是否为邮箱
+    ///
+    /// - Returns: 是否合法
+    public func isValidateEmail() -> Bool {
+        return predicateLimit("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}")
+    }
+    
+    /// 是否是身份证
+    ///
+    /// - Returns: 是否合法
+    public func isCardCode() -> Bool {
+        return predicateLimit("[0-9]{15}([0-9][0-9][0-9xX])?")
+    }
+    
+    /// 去掉所有空格
+    ///
+    /// - Returns: 是否合法
+    public func removeSpace() -> String {
+        return self.base.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+    }
+    
+}
+
+extension TSUtilityString {
+    
     private func stringToColor(_ alpha: CGFloat) -> UIColor {
         
         let rgbValue: String = self.base
@@ -142,6 +195,15 @@ extension TSUtilityString {
             return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha)
         }
     }
+    
+    private func predicateLimit(_ predicateString : String) -> Bool {
+        if self.base.count == 0 {
+            return false
+        }
+        let regextestmobile = NSPredicate(format: "SELF MATCHES %@",predicateString)
+        return regextestmobile.evaluate(with: self.base)
+    }
+    
 }
 
 extension String: TSUtilityCompatible {
