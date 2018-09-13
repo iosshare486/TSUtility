@@ -23,7 +23,7 @@ public final class TSUtilityString {
         
         return self.stringToColor(alpha)
     }
-    
+    //暂时弃用。
     public func substring(_ startIndex: Int, _ endIndex: Int) -> String {
         
         if endIndex < startIndex {
@@ -92,6 +92,64 @@ public final class TSUtilityString {
         
     }
     
+}
+
+extension TSUtilityString {
+    
+    var length: Int {
+        return self.base.count
+    }
+    
+    /// 回去字符串内指定字符
+    ///
+    /// - Parameter i: 指定字符
+    open subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+    
+    /// 截取字符串
+    ///
+    /// - Parameter fromIndex: 从该位置截取
+    /// - Returns: 截取后字符串
+    public func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, length) ..< length]
+    }
+    
+    /// 截取字符串
+    ///
+    /// - Parameter toIndex: 截取到位置
+    /// - Returns: 截取后字符串
+    public func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+    
+    /// 截图字符串
+    ///
+    /// - Parameter r: 截取后的字符串
+    open subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)), upper: min(length, max(0, r.upperBound))))
+        
+        let start = self.base.index(self.base.startIndex, offsetBy: range.lowerBound)
+        let end = self.base.index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self.base[start ..< end])
+    }
+    
+}
+
+extension TSUtilityString {
+    
+    /// 删除字符串后几位操作
+    ///
+    /// - Parameter n: 删除位数
+    /// - Returns: 删除后字符串
+    public func dropLast(_ n: Int = 1) -> String {
+        return String(self.base.dropLast(n))
+    }
+    
+    /// 删除字符串最后一位
+    public var dropLast: String {
+        return dropLast()
+    }
 }
 
 extension TSUtilityString {

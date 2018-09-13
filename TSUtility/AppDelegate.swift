@@ -70,6 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(UIDevice().ts.deviceName)
 //        print(UIDevice().ts.systemVersionGreaterThanOrEqualTo("11.0"))
         print("1s".ts.boundingSize(font: 13.ts.font(), limitSize: CGSize(width: 0, height: CGFloat(MAXFLOAT)), lineSpace: 0))
+        let str = "123444".ts[0..<3]
+        let char = "ffdfcc".ts.substring(toIndex: -1)
+        print("\(str)")
         return true
     }
 

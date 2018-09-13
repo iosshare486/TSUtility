@@ -24,9 +24,17 @@ String:
     1、String.ts.color()
     2、String.ts.color(alpha)
  String -> 获取指定下标的子字符串:
-    substring(startIndex, endIndex)
+    1、String.ts[0..3] -> 0-2下标字符串
+    2、String.ts[3] -> 3下标字符
+    3、String.ts[0..3] -> 0-2下标字符串
+    4、String.ts.substring(toIndex : 3) -> 截图到位置3的字符串
+    5、String.ts.substring(fromIndex : 3) -> 从位置3截图的字符串
+    6、String.ts.dropLast(3) -> 删除后三位字符后的字符串
+    7、String.ts.dropLast -> 删除后一位字符后的字符串
  version compare
     "9.0".versionCompare("11.0") -> ComparisonResult.orderedAscending
+ 
+ 
  
 Scale: <Int; CGFloat; Double; Float>
  example:
