@@ -30,7 +30,7 @@ extension TSUtilityDevice where Base: UIDevice {
     
     /// 是否是iPhone X
     public var isIPhoneX: Bool {
-        if UIScreen.main.bounds.height == 812 {
+        if UIScreen.main.bounds.height == 812 || UIScreen.main.bounds.height == 896 {
             return true
         }
         return false
