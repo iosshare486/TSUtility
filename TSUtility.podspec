@@ -32,5 +32,7 @@ Pod::Spec.new do |s|
 
   s.framework  = "UIKit","Foundation"
 
+  s.swift_version = '4.0'
+
   s.requires_arc = true
 end
