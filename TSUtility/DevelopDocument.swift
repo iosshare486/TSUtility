@@ -59,6 +59,31 @@ Scale: <Int; CGFloat; Double; Float>
  系统版本是否大于等于指定版本
     UIDevice().ts.systemVersionGreaterThanOrEqualTo("11.0")->Bool
  
+ 时间的处理
+    创建时间结构体:
+    1.TSDateObject.init(date: "2018-02-20")
+    1.TSDateObject.init(date: "2018", format: "yyyy")
+    2.TSDateObject.init(date: "2018", format: "yyyy", timeZone: 28800) PS:时区需要换算为秒 东八区即为 8 * 60 * 60 （可以了解一下TimeZone的创建）
+    获取当前时间结构体:
+    TSDateObject()
+    提供时间的属性：
+     var year: 年
+     var month: 月
+     var day: 日
+     var hour: 小时
+     var minute: 分钟
+     var second: 秒
+     ///以下属性必须有年 月 日才可有值
+     /// 距离当前时间秒数间隔 可根据需求自行处理。
+     var timeOffset: TimeInterval?
+     /// 周几
+     var week
+     /// 表示是今年明年去年
+     var yearNickname
+     /// 表示是当月上月下月
+     var monthNickname
+     /// 表示是今天明天昨天
+     var dayNickname
  */
  
  
