@@ -84,7 +84,7 @@ public final class TSUtilityString {
         
         paragraphStyle.lineBreakMode = .byWordWrapping;
         
-        let attributes = [NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
+        let attributes = [NSAttributedString.Key.font:font, NSAttributedString.Key.paragraphStyle:paragraphStyle.copy()]
         
         let rect = self.base.boundingRect(with: limitSize, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
         
@@ -103,7 +103,7 @@ extension TSUtilityString {
     /// 回去字符串内指定字符
     ///
     /// - Parameter i: 指定字符
-    open subscript (i: Int) -> String {
+    public subscript (i: Int) -> String {
         return self[i ..< i + 1]
     }
     
@@ -126,7 +126,7 @@ extension TSUtilityString {
     /// 截图字符串
     ///
     /// - Parameter r: 截取后的字符串
-    open subscript (r: Range<Int>) -> String {
+    public subscript (r: Range<Int>) -> String {
         let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)), upper: min(length, max(0, r.upperBound))))
         
         let start = self.base.index(self.base.startIndex, offsetBy: range.lowerBound)

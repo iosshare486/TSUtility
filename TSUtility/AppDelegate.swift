@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 10
         paragraphStyle.lineBreakMode = .byWordWrapping;
-        let attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 19), NSAttributedStringKey.paragraphStyle:paragraphStyle.copy()]
+        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 19), NSAttributedString.Key.paragraphStyle:paragraphStyle.copy()]
         label1.attributedText = NSAttributedString.init(string: label1.text!, attributes: attributes)
         
         self.window?.addSubview(label)

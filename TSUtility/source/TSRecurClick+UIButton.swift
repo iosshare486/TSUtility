@@ -23,7 +23,7 @@ public extension UIButton {
     
     
     
-    public func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents, clickTimeInterval:TimeInterval) {
+    public func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event, clickTimeInterval:TimeInterval) {
         if clickTimeInterval > Double(0) {
             self.time_interval = clickTimeInterval
         }

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TSUtility"
-  s.version      = "1.0.6"
+  s.version      = "2.0.0"
   s.summary      = "this is utility for scale font and color"
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
                   以及设备信息的获取，这是一个工具类 包含 比例、文字大小、颜色的适配
                   以及设备信息的获取
                    DESC
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "10.0"
   s.homepage     = "https://baidu.com"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.framework  = "UIKit","Foundation"
 
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 
   s.requires_arc = true
 end

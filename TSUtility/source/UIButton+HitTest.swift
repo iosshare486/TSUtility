@@ -28,11 +28,13 @@ extension UIButton {
     }
     ///重写点是否包含在view的区域内
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        if UIEdgeInsetsEqualToEdgeInsets(ts_hitTestEdgeInsets!, UIEdgeInsets.zero) || !isEnabled || isHidden {
+        
+        if (ts_hitTestEdgeInsets! == UIEdgeInsets.zero) || !isEnabled || isHidden {
             return super.point(inside: point, with: event)
         }
         let relativeFrame = bounds
-        let hitFrame = UIEdgeInsetsInsetRect(relativeFrame, ts_hitTestEdgeInsets!)
+        //修复swift 4.2
+        let hitFrame = relativeFrame.inset(by: ts_hitTestEdgeInsets!)
         return hitFrame.contains(point)
     }
 }
