@@ -47,6 +47,7 @@ public final class TSUtilityInt {
 
 extension TSUtilityInt {
     
+    /// Int 转换 颜色
     fileprivate func intToColor(_ alpha: CGFloat) -> UIColor {
         
         let rgbInt: Int = self.base
@@ -64,6 +65,7 @@ extension TSUtilityInt {
     }
 }
 
+/// 遵守协议给Int添加只读属性
 extension Int: TSUtilityCompatible {
     
     public var ts: TSUtilityInt {

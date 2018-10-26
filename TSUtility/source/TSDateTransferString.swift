@@ -4,6 +4,7 @@
 //
 //  Created by huangyuchen on 2018/9/29.
 //  Copyright © 2018年 caiqr. All rights reserved.
+//
 //  解析时间戳 返回结构体，其中包含各种日期相关的属性
 
 import UIKit
@@ -40,13 +41,13 @@ public struct TSDateObject {
     /// 距离当前时间秒数间隔 (正数表示未来，负数表示过去)
     public var timeOffset: TimeInterval?
     /// 周几
-    public var week: TSWeekName?
+    public var week: TSWeekName = .None
     /// 表示是今年明年去年
-    public var yearNickname: TSDateNickname?
+    public var yearNickname: TSDateNickname = .none
     /// 表示是当月上月下月
-    public var monthNickname: TSDateNickname?
+    public var monthNickname: TSDateNickname = .none
     /// 表示是今天明天昨天
-    public var dayNickname: TSDateNickname?
+    public var dayNickname: TSDateNickname = .none
     
 //MARK: - private property
     

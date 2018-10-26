@@ -15,8 +15,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 //        let dateObj = TSDateObject.init(date: "2018-10-10", format: "yyyy-MM-dd")
         do {
-            let dateObj = try TSDateObject.init(date: "ddd", format: "dddd", timeZone: 1111)
+//            let dateObj = try TSDateObject.init(date: "ddd", format: "dddd", timeZone: 1111)
+            let dateObj = try TSDateObject.init(date: "2018-10-10", format: "yyyy-MM-dd")
             TSLog(dateObj?.year)
+            TSLog(dateObj?.month)
+            TSLog(dateObj?.day)
+            TSLog(dateObj?.week)
+            TSLog(dateObj?.yearNickname)
+            TSLog(dateObj?.monthNickname)
+            TSLog(dateObj?.dayNickname)
         } catch let error {
             print(error)
 //            TSLog(error.localizedDescription)

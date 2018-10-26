@@ -23,6 +23,7 @@
 		F5262F7A2084B04900442F4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5262F782084B04900442F4F /* LaunchScreen.storyboard */; };
 		F5262F852084B04900442F4F /* TSUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5262F842084B04900442F4F /* TSUtilityTests.swift */; };
 		F5262F902084B04A00442F4F /* TSUtilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5262F8F2084B04A00442F4F /* TSUtilityUITests.swift */; };
+		F53B41552181A8E700C78C95 /* TSUtility.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F53B41542181A8E700C78C95 /* TSUtility.podspec */; };
 		F5E87D752085D6F800B93140 /* TSUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E87D742085D6F800B93140 /* TSUtility.swift */; };
 		F5FE7CFC2089C40500B54767 /* TSUtilityDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7CFB2089C40500B54767 /* TSUtilityDevice.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		F5262F8B2084B04A00442F4F /* TSUtilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSUtilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5262F8F2084B04A00442F4F /* TSUtilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUtilityUITests.swift; sourceTree = "<group>"; };
 		F5262F912084B04A00442F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F53B41542181A8E700C78C95 /* TSUtility.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TSUtility.podspec; sourceTree = SOURCE_ROOT; };
 		F5E87D742085D6F800B93140 /* TSUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUtility.swift; sourceTree = "<group>"; };
 		F5FE7CFB2089C40500B54767 /* TSUtilityDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUtilityDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F52481EE218312EA00E7D56B /* abandon */ = {
+			isa = PBXGroup;
+			children = (
+				51A812D32125768300463871 /* TSRecurClick+UIButton.swift */,
+				D48AC5DF21392B9C0041F311 /* UIButton+HitTest.swift */,
+			);
+			path = abandon;
+			sourceTree = "<group>";
+		};
 		F5262F632084B04900442F4F = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +130,8 @@
 		F5262F6E2084B04900442F4F /* TSUtility */ = {
 			isa = PBXGroup;
 			children = (
+				F52481EE218312EA00E7D56B /* abandon */,
+				F53B41542181A8E700C78C95 /* TSUtility.podspec */,
 				F504DF58208872D5006B250A /* DevelopDocument.swift */,
 				F569E0E0209187580050BC7B /* source */,
 				F5262F6F2084B04900442F4F /* AppDelegate.swift */,
@@ -160,8 +173,6 @@
 				F5FE7CFB2089C40500B54767 /* TSUtilityDevice.swift */,
 				F5E87D742085D6F800B93140 /* TSUtility.swift */,
 				51A812D12125701200463871 /* TSUserInteraction+UIResponder.swift */,
-				51A812D32125768300463871 /* TSRecurClick+UIButton.swift */,
-				D48AC5DF21392B9C0041F311 /* UIButton+HitTest.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -273,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53B41552181A8E700C78C95 /* TSUtility.podspec in Resources */,
 				F5262F7A2084B04900442F4F /* LaunchScreen.storyboard in Resources */,
 				F5262F772084B04900442F4F /* Assets.xcassets in Resources */,
 				F5262F752084B04900442F4F /* Main.storyboard in Resources */,
