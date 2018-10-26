@@ -47,6 +47,7 @@ public final class TSUtilityString {
         return String(self.base[startIndex...endIndex])
     }
     
+    /// 比较两个版本号的大小
     public func versionCompare(_ compareVersion: String) -> ComparisonResult {
         
         //将两个版本号以“.”拆分成数组
@@ -100,7 +101,7 @@ extension TSUtilityString {
         return self.base.count
     }
     
-    /// 回去字符串内指定字符
+    /// 取字符串内指定字符
     ///
     /// - Parameter i: 指定字符
     public subscript (i: Int) -> String {
