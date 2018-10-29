@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
                   以及设备信息的获取，这是一个工具类 包含 比例、文字大小、颜色的适配
                   以及设备信息的获取
                    DESC
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.0"
   s.homepage     = "https://baidu.com"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
